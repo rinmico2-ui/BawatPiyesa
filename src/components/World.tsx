@@ -12,6 +12,7 @@ import { SecretOverlay } from './SecretOverlay'
 import { HelpPop } from './HelpPop'
 import { Toast, type ToastData } from './Toast'
 import { useLullaby } from '../hooks/useLullaby'
+import { useYouTubeBgm } from '../hooks/useYouTubeBgm'
 import { usePersistentState } from '../hooks/usePersistentState'
 import { bedroomScene } from '../lib/scenes/bedroom'
 import { streetScene } from '../lib/scenes/street'
@@ -111,14 +112,31 @@ export function World() {
     if (playerOpen) void lullaby.prepare()
   }, [playerOpen, lullaby.prepare])
 
-  // autoplay the original instrumental as gentle background music.
-  // World only mounts after the user clicks "enter", so this is a user gesture.
-  const bgmStarted = useRef(false)
+  // the real song, playing gently in the background
+  const bgm = useYouTubeBgm('vvFSVIy1Nqs')
+
+  // autoplay the song once the player is ready (World mounts after a click)
   useEffect(() => {
-    if (bgmStarted.current) return
-    bgmStarted.current = true
-    void lullaby.play()
-  }, [lullaby.play])
+    if (!bgm.ready) return
+    const timer = window.setTimeout(() => bgm.play(), 150)
+    return () => window.clearTimeout(timer)
+  }, [bgm.ready, bgm.play])
+
+  // fall back to the original instrumental if the song cannot play
+  useEffect(() => {
+    if (!bgm.ready) return
+    const timer = window.setTimeout(() => {
+      if (!bgm.playing) void lullaby.play()
+    }, 6000)
+    return () => window.clearTimeout(timer)
+  }, [bgm.ready, bgm.playing, lullaby.play])
+
+  // keep the two from overlapping: pause the song while the tape plays
+  useEffect(() => {
+    if (!bgm.ready) return
+    if (lullaby.playing) bgm.pause()
+    else bgm.play()
+  }, [lullaby.playing, bgm.ready, bgm.play, bgm.pause])
 
   const handleSize = useCallback((w: number, h: number) => {
     setSize((prev) => (prev.w === w && prev.h === h ? prev : { w, h }))
@@ -471,6 +489,7 @@ export function World() {
 
   return (
     <main className="app">
+      <div ref={bgm.containerRef} className="yt-bgm" aria-hidden="true" />
       <section className="scene-stage" aria-label={`${scene.name} — ${scene.tagline}`}>
         <AnimatePresence initial={false}>
           <motion.div

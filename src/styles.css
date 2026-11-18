@@ -2962,3 +2962,15 @@ canvas {
     scroll-behavior: auto !important;
   }
 }
+
+.yt-bgm {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  opacity: 0.01;
+  pointer-events: none;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+
