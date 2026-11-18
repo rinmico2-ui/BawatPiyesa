@@ -150,9 +150,9 @@ export const MEMORIES: Memory[] = [
     id: 'little-things',
     title: 'The Little Things',
     date: 'most days',
-    excerpt: 'A photo you sent. A song you shared. The way you say goodnight.',
+    excerpt: 'A photo you sent. A moment you shared. The way you say goodnight.',
     body: [
-      'A photo you sent from your window. A song you shared at midnight. The way you say goodnight like it means stay.',
+      'A photo you sent from your window. A small moment you shared in the middle of the day. The way you say goodnight like it means stay.',
       'I used to wait for something grand. Now I collect these, quietly, the way you’d pocket a smooth stone from the shore.',
     ],
     sign: 'the small archaeology of love',
@@ -165,7 +165,7 @@ export const MEMORIES: Memory[] = [
     excerpt: 'We looked at the same sky from different provinces. I think we both knew.',
     body: [
       'We looked at the same sky from different provinces. You said, “Look, it’s orange today.” I was already looking.',
-      'For a moment, the distance felt small. Like we were standing side by side, watching the same light fade.',
+      'For a moment, the distance felt small. Like we were standing side by side, watching the same light fade together.',
     ],
     sign: 'same sky, different places',
     art: 'moment',
@@ -177,7 +177,7 @@ export const MEMORIES: Memory[] = [
     excerpt: 'An empty seat beside me, and the long way home I always take anyway.',
     body: [
       'An empty seat beside me, and the long way home I always take anyway.',
-      'One of us is always a little far. Neither of us ever mentions it. That might be the whole love story, right there.',
+      'One of us is always a little far. But every message, every photo, every goodnight makes the space feel smaller.',
     ],
     sign: 'between visits',
     art: 'home',
