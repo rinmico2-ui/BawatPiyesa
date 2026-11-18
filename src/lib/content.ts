@@ -165,9 +165,9 @@ export const MEMORIES: Memory[] = [
     excerpt: 'We looked at the same sky from different provinces. I think we both knew.',
     body: [
       'We looked at the same sky from different provinces. You said, “Look, it’s orange today.” I was already looking.',
-      'I did. I wished for this exact nothing — the warm light, your message, the whole sleepy world between us.',
+      'For a moment, the distance felt small. Like we were standing side by side, watching the same light fade.',
     ],
-    sign: 'don’t forget this',
+    sign: 'same sky, different places',
     art: 'moment',
   },
   {
@@ -179,7 +179,7 @@ export const MEMORIES: Memory[] = [
       'An empty seat beside me, and the long way home I always take anyway.',
       'One of us is always a little far. Neither of us ever mentions it. That might be the whole love story, right there.',
     ],
-    sign: 'the scenic route',
+    sign: 'between visits',
     art: 'home',
   },
   {
