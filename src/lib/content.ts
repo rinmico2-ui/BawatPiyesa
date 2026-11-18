@@ -129,18 +129,18 @@ export const MEMORIES: Memory[] = [
     excerpt: 'You said hello like it was nothing. My whole evening rearranged itself around it.',
     body: [
       'You said hello like it was nothing. My whole evening rearranged itself around it.',
-      'I remember the streetlight flickering on behind you, and thinking: oh. This is going to be one of the days I keep.',
+      'I remember the streetlight flickering on outside, and thinking: oh. This is going to be one of the days I keep.',
     ],
     sign: 'the beginning of everything small',
     art: 'hello',
   },
   {
-    id: 'ordinary-day',
-    title: 'An Ordinary Afternoon',
-    date: 'a tuesday · 4:12 pm',
-    excerpt: 'Two cups on the windowsill, one song on repeat. Nothing happened, and everything did.',
+    id: 'ordinary-evening',
+    title: 'An Ordinary Evening',
+    date: 'a tuesday · 9:12 pm',
+    excerpt: 'Two phones on two desks, one song on repeat. Nothing happened, and everything did.',
     body: [
-      'Two cups on the windowsill, one song on repeat. You were reading. I was pretending to.',
+      'Two phones on two desks, one song on repeat. You were typing. I was pretending not to wait for the next message.',
       'Nothing happened, and everything did. That’s the trick of the good days, I think. You don’t know to mark them.',
     ],
     sign: 'nothing, and everything',
@@ -150,34 +150,34 @@ export const MEMORIES: Memory[] = [
     id: 'little-things',
     title: 'The Little Things',
     date: 'most days',
-    excerpt: 'Your keys on the table. Your laugh from the next room. The last piece left for me.',
+    excerpt: 'A photo you sent. A song you shared. The way you say goodnight.',
     body: [
-      'Your keys on the table. Your laugh from the next room. The last piece of bread left for me without a word.',
+      'A photo you sent from your window. A song you shared at midnight. The way you say goodnight like it means stay.',
       'I used to wait for something grand. Now I collect these, quietly, the way you’d pocket a smooth stone from the shore.',
     ],
     sign: 'the small archaeology of love',
     art: 'little',
   },
   {
-    id: 'moment-worth-keeping',
-    title: 'A Moment Worth Keeping',
-    date: '2:07 am',
-    excerpt: 'We stayed on the roof until the city went quiet. Don’t forget this, I thought.',
+    id: 'shared-sunset',
+    title: 'A Shared Sunset',
+    date: '6:48 pm',
+    excerpt: 'We looked at the same sky from different provinces. I think we both knew.',
     body: [
-      'We stayed on the roof until the city went quiet. You pointed at a falling star and said, “Quick, wish.”',
-      'I did. I wished for this exact nothing — the cold metal under us, your shoulder, the whole sleepy world below.',
+      'We looked at the same sky from different provinces. You said, “Look, it’s orange today.” I was already looking.',
+      'I did. I wished for this exact nothing — the warm light, your message, the whole sleepy world between us.',
     ],
     sign: 'don’t forget this',
     art: 'moment',
   },
   {
-    id: 'long-way-home',
-    title: 'The Long Way Home',
-    date: 'somewhere after the rain',
-    excerpt: 'An umbrella built for one, and the long way home we always took anyway.',
+    id: 'long-wait',
+    title: 'The Long Wait',
+    date: 'somewhere between visits',
+    excerpt: 'An empty seat beside me, and the long way home I always take anyway.',
     body: [
-      'An umbrella built for one, and the long way home we always took anyway.',
-      'One of us always got wet. Neither of us ever mentioned it. That might be the whole love story, right there.',
+      'An empty seat beside me, and the long way home I always take anyway.',
+      'One of us is always a little far. Neither of us ever mentions it. That might be the whole love story, right there.',
     ],
     sign: 'the scenic route',
     art: 'home',
@@ -199,15 +199,14 @@ export const MEMORIES: Memory[] = [
 ]
 
 export const MESSAGES = [
-  { from: 'them', text: 'How was your day?' },
-  { from: 'you', text: 'Quiet. I kept thinking about you.' },
-  { from: 'them', text: 'I wish we could go out today.' },
-  { from: 'you', text: 'One day. Soon.' },
-  { from: 'them', text: 'Look at the sky. I think we’re seeing the same sunset.' },
-  { from: 'you', text: 'Same sky. Different places.' },
-  { from: 'them', text: 'One day, this distance will just be another memory.' },
+  { from: "them", text: "How was your day?" },
+  { from: "you", text: "Quiet. I kept thinking about you." },
+  { from: "them", text: "I wish we could go out today." },
+  { from: "you", text: "One day. Soon." },
+  { from: "them", text: "Look at the sky. I think we’re seeing the same sunset." },
+  { from: "you", text: "Same sky. Different places." },
+  { from: "them", text: "One day, this distance will just be another memory." },
 ]
-
 export const MEMORY_TRIGGER = 'the moon saw you'
 
 export const LOCATIONS = {
