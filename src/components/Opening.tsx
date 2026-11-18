@@ -5,7 +5,7 @@ import { drawField } from '../lib/scenes/field'
 
 export function Opening({ onEnter }: { onEnter: () => void }) {
   return (
-    <main className="opening" aria-label="Bawat Piyesa — an interactive little world">
+    <main className="opening" aria-label="Somewhere Between Us — an interactive little world">
       <div className="absolute inset-0" aria-hidden="true">
         <PixelCanvas
           draw={(ctx, { w, h, t, reduced }) => drawField(ctx, { w, h, t, reduced })}
@@ -26,7 +26,7 @@ export function Opening({ onEnter }: { onEnter: () => void }) {
             <PixelIcon name="heart" size={15} />
           </span>
           <div>
-            <span className="brand-name">bawat piyesa</span>
+            <span className="brand-name">somewhere between us</span>
             <span className="brand-sub">a little world</span>
           </div>
         </div>
@@ -60,7 +60,7 @@ export function Opening({ onEnter }: { onEnter: () => void }) {
             show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] } },
           }}
         >
-          Bawat Piyesa
+          Somewhere Between Us
         </motion.h1>
 
         <motion.div
@@ -77,7 +77,7 @@ export function Opening({ onEnter }: { onEnter: () => void }) {
           className="opening-sub"
           variants={{ hidden: { opacity: 0, y: 12 }, show: { opacity: 1, y: 0, transition: { duration: 0.8 } } }}
         >
-          Some people make the world feel complete.
+          Somewhere, in another province... there's someone I wish was a little closer.
         </motion.p>
 
         <motion.div

@@ -12,12 +12,12 @@ export const LINKS = {
 }
 
 export const STORY_LINES = [
-  'I used to think love arrived like weather — loud, sudden, impossible to miss.',
-  'Then you started leaving the light on for me. And I began to understand.',
-  'Somewhere along the way, the ordinary days became the ones I wanted to remember.',
-  'Maybe love isn’t about finding someone perfect. Maybe it’s about finding someone whose imperfections feel like home.',
-  'Some people don’t change your world all at once. They quietly become part of every little thing.',
-  'If a life is made of pieces, I hope every small, unremarkable piece has you somewhere in it.',
+  'We live in different provinces — close enough to dream about meeting, far enough to miss you.',
+  'The road between us is long, but it is not impossible.',
+  'Some days I look at the sky and wonder if you are looking too.',
+  'Distance is not a wall. It is a pause between visits.',
+  'Every message, every song, every shared sunset makes the space between us feel a little smaller.',
+  'Until the next time we see each other, I will keep you in my world.',
 ]
 
 export type DialogueData = {
@@ -28,7 +28,7 @@ export type DialogueData = {
 export const DIALOGUES: Record<string, DialogueData> = {
   'bedroom-window': {
     speaker: 'the window',
-    lines: ['The sky does this every evening.', 'And still, we stop to look.'],
+    lines: ['The sky does this every evening.', 'I wonder if yours looks the same.'],
   },
   'bedroom-books': {
     speaker: 'the shelf',
@@ -123,9 +123,9 @@ export type Memory = {
 
 export const MEMORIES: Memory[] = [
   {
-    id: 'first-hello',
-    title: 'The First Hello',
-    date: 'june · 7:41 pm',
+    id: 'first-message',
+    title: 'The First Message',
+    date: 'a quiet evening',
     excerpt: 'You said hello like it was nothing. My whole evening rearranged itself around it.',
     body: [
       'You said hello like it was nothing. My whole evening rearranged itself around it.',
@@ -135,7 +135,7 @@ export const MEMORIES: Memory[] = [
     art: 'hello',
   },
   {
-    id: 'ordinary-afternoon',
+    id: 'ordinary-day',
     title: 'An Ordinary Afternoon',
     date: 'a tuesday · 4:12 pm',
     excerpt: 'Two cups on the windowsill, one song on repeat. Nothing happened, and everything did.',
@@ -227,8 +227,7 @@ export const HELP_ITEMS = [
 ]
 
 export const SECRET_TITLE = 'What the Moon Knows'
+
 export const SECRET_MESSAGE = [
-  'Thank you for staying a while. For clicking the little things. For letting the room breathe.',
-  'Some love is not loud. It is a lamp left on. A song played twice. A moon you keep looking back at.',
-  'I hope you have someone who feels like home. And if not yet, I hope you are learning to be that for yourself.',
+  'Even if we can’t be in the same place every day, I’m happy that you’re somewhere in this world. And whenever I look at the sky, it reminds me that we’re sharing the same night.',
 ]
