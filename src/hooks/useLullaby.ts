@@ -10,7 +10,7 @@ export function useLullaby() {
   const [status, setStatus] = useState<LullabyStatus>('idle')
   const [playing, setPlaying] = useState(false)
   const [position, setPosition] = useState(0)
-  const [volume, setVolumeState] = useState(0.7)
+  const [volume, setVolumeState] = useState(0.45)
   const [loop, setLoopState] = useState(true)
   const [bars, setBars] = useState<number[]>(idleBars)
   const [error, setError] = useState<string | null>(null)
@@ -24,7 +24,7 @@ export function useLullaby() {
   const startedAtRef = useRef(0)
   const playingRef = useRef(false)
   const loopRef = useRef(true)
-  const volumeRef = useRef(0.7)
+  const volumeRef = useRef(0.45)
   const renderingRef = useRef<Promise<AudioBuffer | null> | null>(null)
   const dataRef = useRef<Uint8Array<ArrayBuffer> | null>(null)
 

@@ -106,16 +106,19 @@ export function World() {
     notify('welcome in · click the little things')
   }, [welcomed, setWelcomed, notify])
 
-  // warm the tape while the player is open, without autoplaying anything
+  // warm the tape while the player is open
   useEffect(() => {
     if (playerOpen) void lullaby.prepare()
   }, [playerOpen, lullaby.prepare])
 
-  // quietly render the lullaby after entering, so the first play is warm
+  // autoplay the original instrumental as gentle background music.
+  // World only mounts after the user clicks "enter", so this is a user gesture.
+  const bgmStarted = useRef(false)
   useEffect(() => {
-    const timer = window.setTimeout(() => void lullaby.prepare(), 900)
-    return () => window.clearTimeout(timer)
-  }, [lullaby.prepare])
+    if (bgmStarted.current) return
+    bgmStarted.current = true
+    void lullaby.play()
+  }, [lullaby.play])
 
   const handleSize = useCallback((w: number, h: number) => {
     setSize((prev) => (prev.w === w && prev.h === h ? prev : { w, h }))
