@@ -6,6 +6,7 @@ import { Dock } from './Dock'
 import { DialogueBox } from './DialogueBox'
 import { StoryOverlay } from './StoryOverlay'
 import { MusicPlayer } from './MusicPlayer'
+import { Phone } from './Phone'
 import { Gallery } from './Gallery'
 import { MemoryModal } from './MemoryModal'
 import { SecretOverlay } from './SecretOverlay'
@@ -63,6 +64,7 @@ export function World() {
   const [dialogue, setDialogue] = useState<DialogueState | null>(null)
   const [memoryIndex, setMemoryIndex] = useState<number | null>(null)
   const [playerOpen, setPlayerOpen] = useState(false)
+  const [phoneOpen, setPhoneOpen] = useState(false)
   const [toast, setToast] = useState<ToastData | null>(null)
 
   const toastId = useRef(0)
@@ -177,6 +179,7 @@ export function World() {
     setDialogue(null)
     setOverlay(null)
     setMemoryIndex(null)
+    setPhoneOpen(false)
     setPlayerOpen(true)
   }, [])
 
@@ -288,6 +291,9 @@ export function World() {
         case 'bedroom-cassette':
           openPlayer()
           return
+        case 'bedroom-screen':
+          setPhoneOpen(true)
+          return
         case 'rooftop-moon':
           handleMoon(spot)
           return
@@ -336,7 +342,7 @@ export function World() {
   }, [memoryTotal])
 
   // ── overlay focus: move to the top card, then give focus back ──
-  const overlayActive = Boolean(dialogue || overlay || memoryIndex !== null || playerOpen)
+  const overlayActive = Boolean(dialogue || overlay || memoryIndex !== null || playerOpen || phoneOpen)
   useEffect(() => {
     if (overlayActive) setToast(null)
   }, [overlayActive])
@@ -418,6 +424,10 @@ export function World() {
         }
         if (playerOpen) {
           setPlayerOpen(false)
+          return
+        }
+        if (phoneOpen) {
+          setPhoneOpen(false)
           return
         }
         if (dialogue) {
@@ -575,6 +585,7 @@ export function World() {
       />
 
       <MusicPlayer open={playerOpen} onClose={() => setPlayerOpen(false)} lullaby={lullaby} />
+       <Phone open={phoneOpen} onClose={() => setPhoneOpen(false)} />
 
       <AnimatePresence>
         {dialogue && DIALOGUES[dialogue.id] ? (

@@ -2974,3 +2974,112 @@ canvas {
   overflow: hidden;
 }
 
+/* -- phone ---------------------------------------------------- */
+.phone-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  background: rgba(9, 6, 16, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.phone {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  width: min(360px, calc(100vw - 32px));
+  max-height: calc(100dvh - 40px);
+  background: #211936;
+  border: 2px solid var(--cream-2);
+  box-shadow:
+    0 0 0 2px #171126,
+    0 7px 0 rgba(7, 5, 13, 0.4),
+    0 30px 70px rgba(3, 2, 6, 0.55);
+  overflow: hidden;
+}
+
+.phone-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 14px 10px;
+  border-bottom: 1px solid rgba(248, 236, 217, 0.1);
+  background: rgba(248, 236, 217, 0.025);
+}
+
+.phone-top .label {
+  color: var(--rose-2);
+}
+
+.phone-screen {
+  padding: 16px 14px;
+  min-height: 260px;
+  max-height: calc(100dvh - 120px);
+  overflow-y: auto;
+  cursor: pointer;
+}
+
+.phone-chat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.phone-bubble {
+  max-width: 82%;
+  padding: 8px 10px;
+  border-radius: 2px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--cream);
+}
+
+.phone-bubble--you {
+  align-self: flex-end;
+  background: var(--rose-2);
+  color: var(--ink);
+}
+
+.phone-bubble--them {
+  align-self: flex-start;
+  background: rgba(248, 236, 217, 0.08);
+  border: 1px solid rgba(248, 236, 217, 0.12);
+}
+
+.phone-typing {
+  align-self: flex-start;
+  display: flex;
+  gap: 4px;
+  padding: 8px 10px;
+  background: rgba(248, 236, 217, 0.08);
+  border: 1px solid rgba(248, 236, 217, 0.12);
+}
+
+.phone-typing span {
+  width: 5px;
+  height: 5px;
+  background: var(--cream);
+  opacity: 0.6;
+  animation: phoneDot 1s steps(2, end) infinite;
+}
+
+.phone-typing span:nth-child(2) { animation-delay: 0.2s; }
+.phone-typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes phoneDot {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.phone-hint {
+  margin-top: 12px;
+  font-family: 'Silkscreen', monospace;
+  font-size: 7px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(248, 236, 217, 0.34);
+  text-align: center;
+}

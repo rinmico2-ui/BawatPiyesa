@@ -198,6 +198,16 @@ export const MEMORIES: Memory[] = [
   },
 ]
 
+export const MESSAGES = [
+  { from: 'them', text: 'How was your day?' },
+  { from: 'you', text: 'Quiet. I kept thinking about you.' },
+  { from: 'them', text: 'I wish we could go out today.' },
+  { from: 'you', text: 'One day. Soon.' },
+  { from: 'them', text: 'Look at the sky. I think we’re seeing the same sunset.' },
+  { from: 'you', text: 'Same sky. Different places.' },
+  { from: 'them', text: 'One day, this distance will just be another memory.' },
+]
+
 export const MEMORY_TRIGGER = 'the moon saw you'
 
 export const LOCATIONS = {
